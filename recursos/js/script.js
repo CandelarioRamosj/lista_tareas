@@ -1,8 +1,8 @@
 //Agrega el elemento en una variable para agregar el evento "click"
 let agregar = document.getElementById('agregar')
 agregar.addEventListener('click', function(){
-  //Se extrae el nombre de la tarea
-  let tarea = document.getElementById('name').value
+  //Se extrae el nombre de la tarea, tambien se quitan las comillas
+  let tarea = document.getElementById('name').value.replace(/"/g, "")
   if(tarea != ""){
     //Agrega el div que contiene la tarea y sus botones
     //Obtenemos el div padre donde agregaremos los demas elementos
@@ -10,7 +10,7 @@ agregar.addEventListener('click', function(){
     //Creamos el nuevo div
     let divHijo = document.createElement('div')
     //Agregamos los elemento al nuevo div con el nombre de la tarea
-    divHijo.innerHTML ='<label><input type="text" value="" disabled></label> <button class="listo"><i class="fa-solid fa-check"></i></button> <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button> <button class="quitar"><i class="fa-solid fa-x"></i></button>'
+    divHijo.innerHTML ='<label><input type="text" value="'+ tarea +'" disabled></label> <button class="listo"><i class="fa-solid fa-check"></i></button> <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button> <button class="quitar"><i class="fa-solid fa-x"></i></button>'
     //Agregamos el nuevo div al HTML, dentro del div padre
     divPadre.appendChild(divHijo)
   }else {
