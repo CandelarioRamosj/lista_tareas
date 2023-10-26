@@ -1,0 +1,50 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  margin-top: 5vh;
+  margin-bottom: 2vh;
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  background-color: red;
+  display: flex;
+  justify-content: center;
+}
+
+section {
+  display: grid;
+  place-content: center;
+}
+
+#contenedor-superior {
+  
+}
+#contenedor-tareas {
+  
+}
+.tarea {
+  width: 50vw;
+}
+
+input {
+  width: 70%;
+}
+
+.listo {
+  width: 5%;
+}
+.editar {
+  width: 5%;
+}
+.quitar {
+  width: 5%
+}
+
+.listo-click {
+  background-color: yellow;
+}

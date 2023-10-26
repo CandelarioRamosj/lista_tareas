@@ -11,8 +11,14 @@ agregar.addEventListener('click', function(){
     let divHijo = document.createElement('div')
     //Agregamos los elemento al nuevo div con el nombre de la tarea
     divHijo.innerHTML ='<label><input type="text" value="'+ tarea +'" disabled></label> <button class="listo"><i class="fa-solid fa-check"></i></button> <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button> <button class="quitar"><i class="fa-solid fa-x"></i></button>'
+    //Se agrega la clase "tarea" al div
+    divHijo.setAttribute('class', 'tarea')
     //Agregamos el nuevo div al HTML, dentro del div padre
     divPadre.appendChild(divHijo)
+    //Se limpia el input
+    document.getElementById('name').value = ''
+    //Se actualizan las variables
+    actualizarVarListo()
   }else {
     alert("Ingrese alguna tarea")
   }
@@ -20,10 +26,26 @@ agregar.addEventListener('click', function(){
 
 //Agrega el elemento en una variable para agregar el evento "click"
 let listo = document.getElementsByClassName('listo')
+/* Se crea un for para detectar el click en cualquier boton con la misma clase
+Este for se utiliza aqui por que existen "tareas" al iniciar la pagina,
+si se desea quitar las "tareas" que ya extisten (tarea 1, tarea 2, tarea 3),
+entonces puede quitar el for y solo dejar la funcion actualizarVarListo */
 for(let i = 0; i < listo.length; i++){
   listo[i].addEventListener('click', function(){
-    alert("Evento listo")
+  //Obtenemos el div del elemento que detono el evento
+  let div = document.getElementsByClassName('tarea')[i]
+  div.classList.add('listo-click')
   })
+}
+//Creo una funcion para poder actualizar el for
+function actualizarVarListo(){
+  for(let i = 0; i < listo.length; i++){
+    listo[i].addEventListener('click', function(){
+    //Obtenemos el div del elemento que detono el evento
+    let div = document.getElementsByClassName('tarea')[i]
+    div.classList.add('listo-click')
+    })
+  }
 }
 
 //Agrega el elemento en una variable para agregar el evento "click"
