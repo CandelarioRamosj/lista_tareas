@@ -24,10 +24,36 @@
     <section>
       <div>
         <p>Agregar nueva tarea.</p>
-        <input type="text" name="name" id="name" placeholder="Tarea #">
-        <button type="button">Agregar</button>
+        <label>
+          <input type="text" name="name" id="name" placeholder="Tarea #">
+        </label>
+        <button type="button" id="agregar">Agregar</button>
       </div>
       <div id="contenedor-tareas">
+        <div>
+          <label>
+            <input type="text" value="Tarea 1" disabled>
+          </label>
+          <button type="button" class="listo"><i class="fa-solid fa-check"></i></button>
+          <button type="button" class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
+          <button type="button" class="quitar"><i class="fa-solid fa-x"></i></button>
+        </div>
+        <div>
+          <label>
+            <input type="text" value="Tarea 2" disabled>
+          </label>
+          <button class="listo"><i class="fa-solid fa-check"></i></button>
+          <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
+          <button class="quitar"><i class="fa-solid fa-x"></i></button>
+        </div>
+        <div>
+          <label>
+            <input type="text" value="Tarea 3" disabled>
+          </label>
+          <button class="listo"><i class="fa-solid fa-check"></i></button>
+          <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
+          <button class="quitar"><i class="fa-solid fa-x"></i></button>
+        </div>
       </div>
     </section>
   </main>
