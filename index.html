@@ -9,12 +9,21 @@
   <meta name="keywords" content="HTML5, CSS, JS, lista de compras">
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/e9fc205181.js" crossorigin="anonymous"></script>
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.all.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.min.css" rel="stylesheet">
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <!--Titulo-->
   <title>Lista de Compras</title>
   <!-- Icono de la página -->
   <link rel="icon" href="recursos/icon/bag-shopping-solid.svg" type="image/x-icon">
   <!-- CSS -->
   <link rel="stylesheet" href="recursos/css/style.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@300&family=Ubuntu&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
@@ -23,33 +32,24 @@
   <main>
     <section>
       <div id="contenedor-superior">
-        <p>Agregar nueva tarea.</p>
-        <label>
-          <input type="text" name="name" id="name" placeholder="Tarea #">
-        </label>
+        <textarea id="name" placeholder="Agregar nueva tarea" rows="1" maxlength="40"></textarea>
         <button type="button" id="agregar">Agregar</button>
       </div>
       <div id="contenedor-tareas">
         <div class="tarea">
-          <label>
-            <input type="text" value="Tarea 1" disabled>
-          </label>
+          <textarea rows="1" maxlength="40" disabled>Tarea 1</textarea>
           <button type="button" class="listo"><i class="fa-solid fa-check"></i></button>
           <button type="button" class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
           <button type="button" class="quitar"><i class="fa-solid fa-x"></i></button>
         </div>
         <div class="tarea">
-          <label>
-            <input type="text" value="Tarea 2" disabled>
-          </label>
+          <textarea rows="1" maxlength="40" disabled>Tarea 2</textarea>
           <button class="listo"><i class="fa-solid fa-check"></i></button>
           <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
           <button class="quitar"><i class="fa-solid fa-x"></i></button>
         </div>
         <div class="tarea">
-          <label>
-            <input type="text" value="Tarea 3" disabled>
-          </label>
+          <textarea rows="1" maxlength="40" disabled>Tarea 3</textarea>
           <button class="listo"><i class="fa-solid fa-check"></i></button>
           <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
           <button class="quitar"><i class="fa-solid fa-x"></i></button>
