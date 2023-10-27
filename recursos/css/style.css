@@ -1,34 +1,35 @@
 * {
   padding: 0;
   margin: 0;
+  --color1: #B2A4FF;
+  --color2: #FFB4B4;
+  --color3: #FFDEB4;
+  --color4: #FDF7C3;
+}
+
+body {
+  background-color: var(--color1);
 }
 
 header {
-  margin-top: 5vh;
-  margin-bottom: 2vh;
+  margin-top: 10vh;
+  margin-bottom: 5vh;
   display: flex;
   justify-content: center;
   font-family: 'Ubuntu', sans-serif;
-
-  background-color: green;
+  color: var(--color3);
 }
 
 main {
-  background-color: red;
   display: flex;
   justify-content: center;
-}
-
-section {
-  background-color: aqua;
 }
 
 #contenedor-superior {
   display: flex;
   justify-content: center;
   width: 50vw;
-  margin-bottom: 2vh;
-  background-color: yellow;
+  margin-bottom: 5vh;
 }
 
 #contenedor-tareas {
@@ -37,20 +38,62 @@ section {
   justify-content: center;
   align-items: center;
   width: 50vw;
-  background-color: purple;
 }
+
 .tarea {
   display: flex;
   margin-bottom: 1vh;
-  background-color: rosybrown;
+  border-radius: 5vw;
+  border-color: var(--color3);
+  border-style: solid;
+  border-width: thin;
+  background-color: var(--color2);
 }
 
 textarea {
   font-family: 'Playpen Sans', cursive;
-  color: black;
   width: 30vw;
   font-size: 1.5vw;
   resize: none;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  color: var(--color4);
+  background: none;
+  border: none;
+}
+
+#name {
+  background-color: white;
+  color: var(--color2);
+  border-style: solid;
+  border-radius: 5vw;
+  border-width: thin;
+}
+
+#name:focus {
+  outline-color: var(--color3);
+}
+
+#name::placeholder {
+  color: var(--color3);
+}
+
+#agregar {
+  background-color: var(--color2);
+  width: 5vw;
+  border-radius: 5vw;
+  color: var(--color4);
+  font-weight: bold;
+}
+
+#agregar:hover {
+  border-color: var(--color3);
+  border-style: solid;
+  border-width: thin;
+}
+
+#agregar:active {
+  background-color: var(--color3);
 }
 
 button {
@@ -61,41 +104,51 @@ button {
   border:none;
 }
 
-.listo {
-  color: green;
-  font-size: 2vw;
-}
-.listo:hover {
-  color: rgb(8, 253, 8);
-}
-.listo:active {
-  color: rgb(0, 99, 0);
-}
-
-.editar {
-  color: blue;
-  font-size: 2vw;
-}
-.editar:hover {
-  color: rgb(113, 113, 255);
-}
-.editar:active {
-  color: rgb(0, 0, 161);
+.botones-fondo {
+  position: absolute;
+  right: 10vw;
+  bottom: 90vh;
+  height: 5vh;
+  width: 15vh;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5vw;
+  border-color: var(--color2);
+  border-style: solid;
+  background-image: linear-gradient(to right, var(--color2) 50%, transparent 50%);
 }
 
-.quitar {
-  color: red;
+#sol {
   font-size: 2vw;
+  height: 5vh;
+  width: 50%;
+  text-align: center;
+  border-right: solid var(--color2);
+  color: var(--color1);
 }
-.quitar:hover {
-  color: rgb(255, 104, 104);
+
+#luna {
+  font-size: 2vw;
+  height: 5vh;
+  width: 50%;
+  text-align: center;
 }
-.quitar:active {
-  color: rgb(189, 2, 2);
+
+.listo, .editar, .quitar {
+  color: var(--color3);
+  font-size: 1.5vw;
+}
+
+.listo:hover, .editar:hover, .quitar:hover {
+  color: var(--color4);
+}
+
+.listo:active, .editar:active, .quitar:active {
+  color: var(--color1);
 }
 
 .listo-click {
-  background-color: yellow;
+  opacity: 0.5;
 }
 
 /* Animaciones configuracion */
