@@ -10,7 +10,7 @@ agregar.addEventListener('click', function(){
     //Creamos el nuevo div
     let divHijo = document.createElement('div')
     //Agregamos los elemento al nuevo div con el nombre de la tarea
-    divHijo.innerHTML ='<label><input type="text" value="'+ tarea +'" disabled></label> <button class="listo"><i class="fa-solid fa-check"></i></button> <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button> <button class="quitar"><i class="fa-solid fa-x"></i></button>'
+    divHijo.innerHTML ='<textarea rows="1" maxlength="40" disabled>'+ tarea +'</textarea> <button class="listo"><i class="fa-solid fa-check"></i></button> <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button> <button class="quitar"><i class="fa-solid fa-x"></i></button>'
     //Se agrega la clase "tarea" al div
     divHijo.setAttribute('class', 'tarea')
     //Agregamos el nuevo div al HTML, dentro del div padre
@@ -20,7 +20,28 @@ agregar.addEventListener('click', function(){
     //Se actualizan las variables
     actualizarVarListo()
   }else {
-    alert("Ingrese alguna tarea")
+    //Se agrega un alert con SweetAlert2
+    Swal.fire({
+      title: 'Por favor agregue alguna tarea.',
+      icon: 'warning',
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timerProgressBar: true,
+      timer: 3000,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      },
+      showClass: {
+        popup: 'animate__animated animate__bounceInDown',
+        backdrop: false,
+        icon: 'animate__animated animate__bounce'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__bounceOutUp'
+      }
+    })
   }
 })
 
