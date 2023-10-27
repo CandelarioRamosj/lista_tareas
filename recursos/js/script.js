@@ -1,6 +1,19 @@
 //Agrega el elemento en una variable para agregar el evento "click"
 let agregar = document.getElementById('agregar')
-agregar.addEventListener('click', function(){
+agregar.addEventListener('click', agregarTarea)
+
+
+//Detecta si dentro del textarea se hacer "enter"
+document.getElementById('name').addEventListener('keydown', function(e){
+  if(e.keyCode === 13){
+    e.preventDefault()
+    document.getElementById('agregar').click()
+  }
+})
+
+
+//Funcion que agrega la nueva tarea a la lista
+function agregarTarea(){
   //Se extrae el nombre de la tarea, tambien se quitan las comillas
   let tarea = document.getElementById('name').value.replace(/"/g, "")
   if(tarea != ""){
@@ -43,7 +56,8 @@ agregar.addEventListener('click', function(){
       }
     })
   }
-})
+}
+
 
 //Agrega el elemento en una variable para agregar el evento "click"
 let listo = document.getElementsByClassName('listo')
