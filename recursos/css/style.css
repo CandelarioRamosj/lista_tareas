@@ -8,6 +8,9 @@ header {
   margin-bottom: 2vh;
   display: flex;
   justify-content: center;
+  font-family: 'Ubuntu', sans-serif;
+
+  background-color: green;
 }
 
 main {
@@ -17,34 +20,89 @@ main {
 }
 
 section {
-  display: grid;
-  place-content: center;
+  background-color: aqua;
 }
 
 #contenedor-superior {
-  
-}
-#contenedor-tareas {
-  
-}
-.tarea {
+  display: flex;
+  justify-content: center;
   width: 50vw;
+  margin-bottom: 2vh;
+  background-color: yellow;
 }
 
-input {
-  width: 70%;
+#contenedor-tareas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  background-color: purple;
+}
+.tarea {
+  display: flex;
+  margin-bottom: 1vh;
+  background-color: rosybrown;
+}
+
+textarea {
+  font-family: 'Playpen Sans', cursive;
+  color: black;
+  width: 30vw;
+  font-size: 1.5vw;
+  resize: none;
+}
+
+button {
+  font-family: 'Ubuntu', sans-serif;
+  width: 2.5vw;
+  margin-left: 1vw;
+  background: none;
+  border:none;
 }
 
 .listo {
-  width: 5%;
+  color: green;
+  font-size: 2vw;
 }
+.listo:hover {
+  color: rgb(8, 253, 8);
+}
+.listo:active {
+  color: rgb(0, 99, 0);
+}
+
 .editar {
-  width: 5%;
+  color: blue;
+  font-size: 2vw;
 }
+.editar:hover {
+  color: rgb(113, 113, 255);
+}
+.editar:active {
+  color: rgb(0, 0, 161);
+}
+
 .quitar {
-  width: 5%
+  color: red;
+  font-size: 2vw;
+}
+.quitar:hover {
+  color: rgb(255, 104, 104);
+}
+.quitar:active {
+  color: rgb(189, 2, 2);
 }
 
 .listo-click {
   background-color: yellow;
+}
+
+/* Animaciones configuracion */
+.animate__animated.animate__bounce {
+  --animate-duration: 2s;
+}
+
+.swal2-popup {
+  font-family: 'Playpen Sans', cursive;
 }
