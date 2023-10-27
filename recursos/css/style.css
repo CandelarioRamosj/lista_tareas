@@ -104,6 +104,10 @@ button {
   border:none;
 }
 
+button:focus {
+  outline-color: var(--color3);
+}
+
 .botones-fondo {
   position: absolute;
   right: 10vw;
