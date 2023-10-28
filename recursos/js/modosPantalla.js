@@ -14,13 +14,10 @@ moon.addEventListener('click', function(e){
 
 
   //Se cambia el color de todo el documento para el modo nocturno
-  let elementos = document.querySelectorAll('*');
-  for (let i = 0; i < elementos.length; i++) {
-    elementos[i].style.setProperty('--color1', '#0C134F');
-    elementos[i].style.setProperty('--color4', '#5C469C');
-    elementos[i].style.setProperty('--color3', '#1D267D');
-    elementos[i].style.setProperty('--color2', '#D4ADFC');
-  }
+    document.documentElement.style.setProperty('--color1', '#0C134F');
+    document.documentElement.style.setProperty('--color2', '#D4ADFC');
+    document.documentElement.style.setProperty('--color3', '#1D267D');
+    document.documentElement.style.setProperty('--color4', '#5C469C');
   
 
   //Cambia el color del fondo del textarea de tareas
@@ -61,15 +58,12 @@ sol.addEventListener('click', function(e){
 
 
   //Se cambia el color de todo el documento para el modo nocturno
-  let elementos = document.querySelectorAll('*');
-  for (let i = 0; i < elementos.length; i++) {
-    elementos[i].style.setProperty('--color1', '#B2A4FF');
-    elementos[i].style.setProperty('--color4', '#FDF7C3');
-    elementos[i].style.setProperty('--color3', '#FFDEB4');
-    elementos[i].style.setProperty('--color2', '#FFB4B4');
-  }
-  
+  document.documentElement.style.setProperty('--color1', '#B2A4FF');
+  document.documentElement.style.setProperty('--color2', '#FFB4B4');
+  document.documentElement.style.setProperty('--color3', '#FFDEB4');
+  document.documentElement.style.setProperty('--color4', '#FDF7C3');
 
+  
   //Cambia el color del fondo del textarea de tareas
   let name = document.getElementById('name')
   name.style.backgroundColor = 'white'
