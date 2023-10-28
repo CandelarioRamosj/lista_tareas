@@ -17,7 +17,7 @@ header {
   display: flex;
   justify-content: center;
   font-family: 'Ubuntu', sans-serif;
-  color: var(--color3);
+  color: var(--color2);
 }
 
 main {
@@ -120,6 +120,11 @@ button:focus {
   border-color: var(--color2);
   border-style: solid;
   background-image: linear-gradient(to right, var(--color2) 50%, transparent 50%);
+  color: var(--color1);
+}
+
+.botones-fondo-nocturno {
+  background-image: linear-gradient(to left, var(--color2) 50%, transparent 50%);
 }
 
 #sol {
@@ -128,7 +133,10 @@ button:focus {
   width: 50%;
   text-align: center;
   border-right: solid var(--color2);
-  color: var(--color1);
+}
+
+#sol:hover {
+  color: var(--color3);
 }
 
 #luna {
@@ -136,6 +144,11 @@ button:focus {
   height: 5vh;
   width: 50%;
   text-align: center;
+  color: var(--color2);
+}
+
+#luna:hover {
+  color: var(--color3);
 }
 
 .listo, .editar, .quitar {
