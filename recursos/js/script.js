@@ -3,7 +3,7 @@ let agregar = document.getElementById('agregar')
 agregar.addEventListener('click', agregarTarea)
 
 
-//Detecta si dentro del textarea se hacer "enter"
+//? Detecta si dentro del textarea se hacer "enter"
 document.getElementById('name').addEventListener('keydown', function(e){
   if(e.keyCode === 13){
     e.preventDefault()
@@ -12,7 +12,10 @@ document.getElementById('name').addEventListener('keydown', function(e){
 })
 
 
-//Funcion que agrega la nueva tarea a la lista
+//? Se crea una variable contador para llevar el control de las variables
+let contador = 0
+
+//? Funcion que agrega la nueva tarea a la lista
 function agregarTarea(){
   //Se extrae el nombre de la tarea, tambien se quitan las comillas
   let tarea = document.getElementById('name').value.replace(/"/g, "")
@@ -22,16 +25,17 @@ function agregarTarea(){
     let divPadre = document.getElementById('contenedor-tareas')
     //Creamos el nuevo div
     let divHijo = document.createElement('div')
+    //Agregamos el valor del contador sumado
+    contador = contador + 1
     //Agregamos los elemento al nuevo div con el nombre de la tarea
-    divHijo.innerHTML ='<textarea rows="1" maxlength="40" disabled>'+ tarea +'</textarea> <button class="listo"><i class="fa-solid fa-check"></i></button> <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button> <button class="quitar"><i class="fa-solid fa-x"></i></button>'
-    //Se agrega la clase "tarea" al div
+    divHijo.innerHTML ='<textarea rows="1" maxlength="40" disabled>'+ tarea +'</textarea> <button type="button" id="btn-listo-'+ contador +'" class="listo" onclick="listo('+ contador +')"><i class="fa-solid fa-check"></i></button> <button type="button" id="btn-editar-'+ contador +'" class="editar" onclick="editar('+ contador +')"><i class="fa-solid fa-pen-to-square"></i></button> <button type="button" id="btn-eliminar-'+ contador +'" class="quitar" onclick="eliminar('+ contador +')"><i class="fa-solid fa-x"></i></button>'
+    //Se agrega la clase "tarea" al div y el id
     divHijo.setAttribute('class', 'tarea')
+    divHijo.setAttribute('id', 'elemento' + contador)
     //Agregamos el nuevo div al HTML, dentro del div padre
     divPadre.appendChild(divHijo)
     //Se limpia el input
     document.getElementById('name').value = ''
-    //Se actualizan las variables
-    actualizarVarListo()
   }else {
     //Se agrega un alert con SweetAlert2
     Swal.fire({
@@ -59,42 +63,31 @@ function agregarTarea(){
 }
 
 
-//Agrega el elemento en una variable para agregar el evento "click"
-let listo = document.getElementsByClassName('listo')
-/* Se crea un for para detectar el click en cualquier boton con la misma clase
-Este for se utiliza aqui por que existen "tareas" al iniciar la pagina,
-si se desea quitar las "tareas" que ya extisten (tarea 1, tarea 2, tarea 3),
-entonces puede quitar el for y solo dejar la funcion actualizarVarListo */
-for(let i = 0; i < listo.length; i++){
-  listo[i].addEventListener('click', function(){
+//? Creo una funcion para cuando se de en listo a una tarea
+function listo(id){
   //Obtenemos el div del elemento que detono el evento
-  let div = document.getElementsByClassName('tarea')[i]
+  let div = document.getElementById('elemento'+ id)
   div.classList.add('listo-click')
-  })
-}
-//Creo una funcion para poder actualizar el for
-function actualizarVarListo(){
-  for(let i = 0; i < listo.length; i++){
-    listo[i].addEventListener('click', function(){
-    //Obtenemos el div del elemento que detono el evento
-    let div = document.getElementsByClassName('tarea')[i]
-    div.classList.add('listo-click')
-    })
-  }
+  //Se desactivan los botones
+  let botonListo = document.getElementById('btn-listo-' + id)
+  botonListo.style.opacity = 0
+  botonListo.disabled = true
+  let botonEditar = document.getElementById('btn-editar-' + id)
+  botonEditar.style.opacity = 0
+  botonEditar.disabled = true
 }
 
-//Agrega el elemento en una variable para agregar el evento "click"
-let editar = document.getElementsByClassName('editar')
-for(let i = 0; i < editar.length; i++){
-  editar[i].addEventListener('click', function(){
-    alert("Evento editar")
-  })
+
+//! Sin modificar
+//? Funcion editar
+function editar(id){
+  alert(id)
 }
 
-//Agrega el elemento en una variable para agregar el evento "click"
-let quitar = document.getElementsByClassName('quitar')
-for(let i = 0; i < quitar.length; i++){
-  quitar[i].addEventListener('click', function(){
-    alert("Evento quitar")
-  })
+
+//? Funcion eliminar tareas
+function eliminar(id){
+  let divHijo = document.getElementById('elemento'+ id)
+  let divPadre = document.getElementById('contenedor-tareas')
+  divPadre.removeChild(divHijo)
 }
