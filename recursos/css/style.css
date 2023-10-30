@@ -355,7 +355,83 @@ footer {
 /**Portrait*/
 /**Default*/
 @media (max-width: 575.98px)and (orientation:portrait) {
-  body{background: green;}
+  header {
+    margin-top: 7vh;
+    margin-bottom: 4vh;
+    justify-content: center;
+    font-size: 4.5vw;
+  }
+  
+  #contenedor-superior {
+    justify-content: center;
+    width: 90vw;
+    margin-bottom: 3vh;
+  }
+  
+  #contenedor-tareas {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 95vw;
+  }
+  
+  .tarea {
+    margin-bottom: 1vh;
+    border-radius: 5vw;
+  }
+  
+  textarea {
+    width: 60vw;
+    font-size: 5.5vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+  
+  #agregar {
+    width: 18vw;
+    border-radius: 5vw;
+    font-size: 3.5vw;
+  }
+  
+  button {
+    width: 7vw;
+  }
+  
+  .botones-fondo {
+    right: 10vw;
+    bottom: 93vh;
+    height: 3vh;
+    width: 10vh;
+    justify-content: space-between;
+    border-radius: 5vw;
+  }
+  
+  #sol {
+    font-size: 6vw;
+    height: 3vh;
+    width: 50%;
+    text-align: center;
+  }
+  
+  #luna {
+    font-size: 6vw;
+    height: 3vh;
+    width: 50%;
+    text-align: center;
+  }
+  
+  .listo, .editar, .quitar {
+    font-size: 5vw;
+  }
+  
+  footer {
+    bottom: 2vh;
+    font-size: 4vw;
+  }
+
+  .swal2-popup {
+    font-size: 4vw;
+  }
 }
 /**landscape*/
 @media (min-width: 576px) and (max-width: 991.98px) and (orientation:landscape) {
