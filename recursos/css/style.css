@@ -175,6 +175,7 @@ footer {
   color: var(--color4);
   position: fixed;
   bottom: 2vh;
+  font-family: 'Playpen Sans', cursive;
 }
 /* Animaciones configuracion */
 .animate__animated.animate__bounce {
@@ -184,3 +185,109 @@ footer {
 .swal2-popup {
   font-family: 'Playpen Sans', cursive;
 }
+
+/*TODO: Media Query */
+/*?Tablet*/
+/**Portrait*/
+@media (min-width: 576px) and (max-width: 991.98px) and (orientation:portrait) {
+  header {
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+    justify-content: center;
+    font-size: 3.5vw;
+  }
+  
+  #contenedor-superior {
+    justify-content: center;
+    width: 80vw;
+    margin-bottom: 4vh;
+  }
+  
+  #contenedor-tareas {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+  }
+  
+  .tarea {
+    margin-bottom: 1vh;
+    border-radius: 5vw;
+  }
+  
+  textarea {
+    width: 60vw;
+    font-size: 4vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+  
+  #name {
+    border-radius: 5vw;
+  }
+  
+  #agregar {
+    width: 13vw;
+    border-radius: 5vw;
+    font-size: 2.5vw;
+  }
+  
+  button {
+    width: 5vw;
+  }
+  
+  .botones-fondo {
+    right: 10vw;
+    bottom: 90vh;
+    height: 4vh;
+    width: 15vh;
+    justify-content: space-between;
+    border-radius: 5vw;
+  }
+  
+  #sol {
+    font-size: 4.5vw;
+    height: 4vh;
+    width: 50%;
+    text-align: center;
+  }
+  
+  #luna {
+    font-size: 4.5vw;
+    height: 5vh;
+    width: 50%;
+    text-align: center;
+  }
+  
+  .listo, .editar, .quitar {
+    font-size: 4vw;
+  }
+  
+  footer {
+    bottom: 2vh;
+    font-size: 3vw;
+  }
+
+  .swal2-popup {
+    font-family: 'Playpen Sans', cursive;
+    font-size: 3vw;
+  }
+}
+
+/**landscape*/
+@media (min-width: 991.98px) and (max-width: 1199.98px)and (orientation:landscape) {
+  body{background: blue;}
+}
+/*?fin tablet*/
+
+/*?movil*/
+/**Portrait*/
+/**Default*/
+@media (max-width: 575.98px)and (orientation:portrait) {
+  body{background: green;}
+}
+/**landscape*/
+@media (min-width: 576px) and (max-width: 991.98px) and (orientation:landscape) {
+  body{background: black;}
+}
+/*?fin movil*/
