@@ -272,7 +272,8 @@ footer {
   
   .botones-fondo {
     right: 10vw;
-    bottom: 90vh;
+    bottom: 0;
+    top: 5vh;
     height: 4vh;
     width: 15vh;
     justify-content: space-between;
@@ -353,7 +354,8 @@ footer {
   
   .botones-fondo {
     right: 10vw;
-    bottom: 90vh;
+    bottom: 0;
+    top: 5vh;
     height: 5vh;
     width: 15vh;
     justify-content: space-between;
@@ -518,7 +520,8 @@ footer {
   
   .botones-fondo {
     right: 10vw;
-    bottom: 90vh;
+    top: 7vh;
+    bottom: 0;
     height: 5vh;
     width: 20vh;
     justify-content: space-between;
